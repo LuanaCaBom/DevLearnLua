@@ -18,7 +18,6 @@ return new class extends Migration
             $table->string('descricao');
             $table->float('valor');
             $table->string('recomendacoes');
-            $table->string('certificado');
             $table->timestamps();
         });
     }

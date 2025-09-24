@@ -47,4 +47,9 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function curso()
+    {
+        return $this->hasMany('App\Models\Curso', 'user_id');
+    }
 }

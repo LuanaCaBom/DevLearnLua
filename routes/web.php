@@ -16,3 +16,6 @@ Route::post('/obras/{id}', [controllerModelart::class, 'update'])->name('atualiz
 Route::get('/obras/pesquisar', [controllerModelart::class, 'pesquisarObra'])->name('pesquisarObra');
 Route::get('/obras/procurar', [controllerModelart::class, 'procurarObra'])->name('procurarObra');
 Route::get('/obras/donwload/{id}', [controllerModelart::class, 'download'])->name('donwload');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
