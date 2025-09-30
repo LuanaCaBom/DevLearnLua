@@ -1,5 +1,5 @@
 <nav class="navbar navbar-dark navbar-centro fixed-top bg-warning flex-md-nowrap p-0 shadow">
-    <a class="navbar-brand" href="#">Galeria de Obras de Arte</a>
+    <a class="navbar-brand" href="#">Dev Learn</a>
 </nav>
 
 <div class="container-fluid">
@@ -14,21 +14,21 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/obras">
+                        <a class="nav-link" href="/cursos">
                             <span data-feather="file"></span>
-                            Exibir Obras Cadastrados
+                            Exibir Cursos Cadastrados
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('novaObra')}}">
+                        <a class="nav-link" href="{{route('novoCurso')}}">
                             <span data-feather="shopping-cart"></span>
-                            Cadastro de Obras
+                            Cadastro de Cursos
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('pesquisarObra')}}">
+                        <a class="nav-link" href="{{route('pesquisarCurso')}}">
                             <span data-feather="users"></span>
-                            Pesquisar Obras
+                            Pesquisar Cursos
                         </a>
                     </li>
                     <footer class="footer mt-auto py-3 navbar-fixed-bottom ">

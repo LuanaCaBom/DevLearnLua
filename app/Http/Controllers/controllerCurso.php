@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Curso;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 
 class controllerCurso extends Controller
 {
@@ -14,7 +15,7 @@ class controllerCurso extends Controller
      */
     public function index()
     {
-        $dados = Curso::all();
+        $dados = $this->cursos->with('user')->where('user_id', '=', Auth::id())->get();
         return view('exibirCursos', compact('dados'));
     }
 
@@ -37,6 +38,7 @@ class controllerCurso extends Controller
         $dados->descricao = $request->input('descricao');
         $dados->valor = $request->input('valor');
         $dados->recomendacoes = $request->input('recomendacoes');
+        $dados->user_id = Auth::id();
         $dados->save();
         return redirect('/cursos')->with('success', 'Novo curso cadastrado com sucesso.');
     }
@@ -111,5 +113,11 @@ class controllerCurso extends Controller
         }else{
             return redirect('/obras')->with('danger', 'Erro ao tentar baixar.');
         }
+    }
+
+    private $cursos;
+    public function __construct(){
+        $this->middleware('auth');
+        $this->cursos = $cursos;
     }
 }

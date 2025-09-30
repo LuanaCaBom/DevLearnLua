@@ -1,21 +1,25 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\controllerModelart;
+use App\Http\Controllers\controllerCurso;
 
 Route::get('/', function () {
     return view('index');
-})->name('inicio');
+})->name('inicio')->middleware('auth');
 
-Route::get('/obras', [controllerModelart::class, 'index'])->name('indexObras');
-Route::get('/obras/novo', [controllerModelart::class, 'create'])->name('novaObra');
-Route::post('/obras', [controllerModelart::class, 'store'])->name('gravaNovaObra');
-Route::get('/obras/apagar/{id}', [controllerModelart::class, 'destroy'])->name('deletaObra');
-Route::get('/obras/editar/{id}', [controllerModelart::class, 'edit'])->name('editaObra');
-Route::post('/obras/{id}', [controllerModelart::class, 'update'])->name('atualizaObra');
-Route::get('/obras/pesquisar', [controllerModelart::class, 'pesquisarObra'])->name('pesquisarObra');
-Route::get('/obras/procurar', [controllerModelart::class, 'procurarObra'])->name('procurarObra');
-Route::get('/obras/donwload/{id}', [controllerModelart::class, 'download'])->name('donwload');
+Route::get('/cursos', [controllerCurso::class, 'index'])->name('indexCursos');
+Route::get('/cursos/novo', [controllerCurso::class, 'create'])->name('novoCurso');
+Route::post('/obras', [controllerCurso::class, 'store'])->name('gravaNovoCurso');
+Route::get('/cursos/apagar/{id}', [controllerCurso::class, 'destroy'])->name('deletaCurso');
+Route::get('/cursos/editar/{id}', [controllerCurso::class, 'edit'])->name('editaCurso');
+Route::post('/cursos/{id}', [controllerCurso::class, 'update'])->name('atualizaCurso');
+Route::get('/cursos/pesquisar', [controllerCurso::class, 'pesquisarCurso'])->name('pesquisarCurso');
+Route::get('/cursos/procurar', [controllerCurso::class, 'procurarCurso'])->name('procurarCurso');
+Route::get('/cursos/donwload/{id}', [controllerCurso::class, 'download'])->name('donwload');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

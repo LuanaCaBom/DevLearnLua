@@ -4,44 +4,39 @@
     <div class="card-body">
         <div class="jumbotron jumbotron-fluid">
             <div class="container-fluid">
-                <h1 class="mt-5 text-center">ATUALIZE OS DADOS DA SUA OBRA</h1>
+                <h1 class="mt-5 text-center">ATUALIZE OS DADOS DO SEU CURSO</h1>
             </div>
         </div>
-        <form action="/obras/{{ $dados->id }}" method="POST">
+        <form action="/cursos/{{ $dados->id }}" method="POST">
             @csrf
             <div class="form-group">
-                <label for="nomeObra">Nome:</label>
-                <input type="text" class="form-control" name="nomeObra"
-                    value="{{ $dados->nomeObra }}">
+                <label for="nomeCurso">Nome:</label>
+                <input type="text" class="form-control" name="nomeCurso"
+                    value="{{ $dados->nomeCurso }}">
             </div>
             <div class="form-group">
-                <label for="artistaObra">Artista:</label>
-                <input type="text" class="form-control" name="artistaObra"
-                    value="{{ $dados->artistaObra }}">
+                <label for="cargaHoraria">Carga Horária:</label>
+                <input type="number" class="form-control" name="cargaHoraria"
+                    value="{{ $dados->cargaHoraria }}">
             </div>
             <div class="form-group">
-                <label for="tipoObra">Tipo:</label>
-                <input type="text" class="form-control" name="tipoObra"
-                    value="{{ $dados->tipoObra }}">
+                <label for="descricao">Descrição:</label>
+                <input type="text" class="form-control" name="descricao"
+                    value="{{ $dados->descricao }}">
             </div>
             <div class="form-group">
-                <label for="estiloObra">Estilo:</label>
-                <input type="text" class="form-control" name="estiloObra"
-                    value="{{ $dados->estiloObra }}">
+                <label for="valor">Valor:</label>
+                <input type="number" class="form-control" name="valor"
+                    value="{{ $dados->valor }}">
             </div>
             <div class="form-group">
-                <label for="imagemObra">Imagem:</label>
-                <input type="text" class="form-control" name="imagemObra"
-                    value="{{ $dados->imagemObra }}">
-            </div>
-            <div class="form-group">
-                <label for="dataObra">Data:</label>
-                <input type="number" class="form-control" name="dataObra"
-                    value="{{ $dados->dataObra }}">
+                <label for="recomendacoes">Recomendações:</label>
+                <input type="text" class="form-control" name="recomendacoes"
+                    value="{{ $dados->recomendacoes }}">
             </div>
         
             <button type="submit" class="btn btn-outline-primary btn-sm">Salvar</button>
-            <button onclick="window.location.href='{{ route('indexObras') }}';" type="button"
+            <button onclick="window.location.href='{{ route('indexCursos') }}';" type="button"
                 class="btn btn-outline-danger btn-sm">Cancelar</button>
         </form>
     </div>

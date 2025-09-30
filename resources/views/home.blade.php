@@ -19,7 +19,7 @@
                     @if(auth()->user()->tipo == 'A')
                         <h3>Você é administrador</h3>
                     @elseif(auth()->user()->tipo == 'U')
-                        <h3>Você é usuário comum</h3>
+                        <h3>Você é usuário</h3>
                     @endif
                 </div>
             </div>
