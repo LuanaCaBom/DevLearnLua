@@ -1,5 +1,5 @@
 <?php
-
+/*
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -9,33 +9,34 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
 
-class controllerCurso extends Controller
+
+class controllerCursoUser extends Controller
 {
     private $cursos;
     public function __construct(Curso $cursos){
         $this->middleware('auth');
         $this->cursos = $cursos;
     }
-    /**
-     * Display a listing of the resource.
-     */
+    
+    //Display a listing of the resource.
+
     public function index()
     {
         $dados = $this->cursos->with('user')->where('user_id', '=', Auth::id())->get();
         return view('exibirCursos', compact('dados'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+    
+    //Show the form for creating a new resource.
+    
     public function create()
     {
         return view('novoCurso');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+    
+    //Store a newly created resource in storage.
+    
     public function store(Request $request)
     {
         $dados = new Curso();
@@ -48,17 +49,17 @@ class controllerCurso extends Controller
         return redirect('/cursos')->with('success', 'Novo curso cadastrado com sucesso.');
     }
 
-    /**
-     * Display the specified resource.
-     */
+    
+    //Display the specified resource.
+    
     public function show(string $id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
+    
+    //Show the form for editing the specified resource.
+    
     public function edit(string $id)
     {
         $dados = Curso::find($id);
@@ -68,9 +69,9 @@ class controllerCurso extends Controller
         return redirect('/cursos')->with('danger', 'Erro ao tentar editar curso.');
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
+    
+    //Update the specified resource in storage.
+    
     public function update(Request $request, string $id)
     {
         $dados = Curso::find($id);
@@ -86,9 +87,9 @@ class controllerCurso extends Controller
         return redirect('/cursos')->with('danger', 'Erro ao tentar atualizar curso.');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+    
+    Remove the specified resource from storage.
+    
     public function destroy(string $id)
     {
         $dados = Curso::find($id);
@@ -120,3 +121,4 @@ class controllerCurso extends Controller
         }
     }
 }
+*/

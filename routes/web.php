@@ -18,7 +18,7 @@ Route::get('/cursos/procurar', [controllerCurso::class, 'procurarCurso'])->name(
 Route::get('/cursos/donwload/{id}', [controllerCurso::class, 'download'])->name('donwload');
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 
