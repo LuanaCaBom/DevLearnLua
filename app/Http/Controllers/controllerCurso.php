@@ -21,8 +21,9 @@ class controllerCurso extends Controller
      */
     public function index()
     {
-        $dados = $this->cursos->with('user')->where('user_id', '=', Auth::id())->get();
+        $dados = Curso::all();
         return view('exibirCursos', compact('dados'));
+       
     }
 
     /**

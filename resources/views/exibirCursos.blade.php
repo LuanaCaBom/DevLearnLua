@@ -18,7 +18,7 @@
             @foreach ($dados as $item)
                 <div class="col-md-4 mb-4">
                     <div class="card h-100">
-                        <!--<img class="card-img-top" src="/storage/{{ $item->imagemObra }}" alt="Imagem de capa do card" height="400" width="10%">-->
+                        
                         <div class="card-body">
                             <h5 class="card-title"><b>{{ $item->nomeCurso }}</b></h5>
                             <p class="card-text"><b>Carga Horária: </b>{{ $item->cargaHoraria }}</p>
