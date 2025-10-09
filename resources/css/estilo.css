@@ -25,6 +25,14 @@ footer {
     justify-content: left;
 }
 
+.mainLogin {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-height: calc(100vh - 120px - 4rem);
+}
+
 .footer-margin {
     margin-left: 0.5rem;
 }
