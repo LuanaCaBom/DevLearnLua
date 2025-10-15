@@ -7,12 +7,29 @@ use Illuminate\Http\Request;
 class controllerArquivos extends Controller
 {
     public function store(Request $request)
-    {
-        $path = $request->file('arquivo')->store('arquivos', 'public');
+    {   
+        $post->tipo = $request->input('tipoArq');
+
+        if ($post->tipo == 'A'){
+            $path = $request->file('arquivo')->store('aulas', 'public');
+        }
+
+        elseif ($post->tipo == 'E'){
+            $path = $request->file('arquivo')->store('exercicios', 'public');
+        }
+
+        elseif ($post->tipo == 'C'){
+            $path = $request->file('arquivo')->store('certificados', 'public');
+        }
+
+        else{
+            $path = $request->file('arquivo')->store('complementar', 'public');
+        }
+        
         $post = new Arquivo();
-        $post->titulo = $request->input('titulo');
-        $post->descricao = $request->input('descricao');
-        $post->data = $request->input('data');
+        $post->titulo = $request->input('tituloArq');
+        $post->descricao = $request->input('descricaoArq');
+        $post->data = $request->input('dataArq');
         $post->arquivo = $path;
         $post->save();
         return redirect('/');
