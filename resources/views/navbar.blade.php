@@ -14,15 +14,15 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/cursos">
-                            <span data-feather="file"></span>
-                            Exibir Cursos Cadastrados
-                        </a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="{{route('novoCurso')}}">
                             <span data-feather="shopping-cart"></span>
                             Cadastro de Cursos
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/cursos">
+                            <span data-feather="file"></span>
+                            Exibir Cursos Cadastrados
                         </a>
                     </li>
                     <li class="nav-item">

@@ -9,7 +9,6 @@ Route::get('/', function () {
 
 Route::get('/cursos', [controllerCurso::class, 'index'])->name('indexCursos');
 Route::get('/cursos/novo', [controllerCurso::class, 'create'])->name('novoCurso');
-Route::post('/obras', [controllerCurso::class, 'store'])->name('gravaNovoCurso');
 Route::get('/cursos/apagar/{id}', [controllerCurso::class, 'destroy'])->name('deletaCurso');
 Route::get('/cursos/editar/{id}', [controllerCurso::class, 'edit'])->name('editaCurso');
 Route::post('/cursos/{id}', [controllerCurso::class, 'update'])->name('atualizaCurso');
