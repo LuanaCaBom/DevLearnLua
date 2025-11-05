@@ -14,6 +14,7 @@
 
     <div class="card-body cor">
         <h5 class="card-title" style="text-align: center">Aulas</h5>
+        <a href="{{route('novaAula')}}">Cadastrar Aula</a>
         <div class="row">
             @foreach ($dados as $item)
                 <div class="col-md-4 mb-4">
@@ -28,7 +29,6 @@
                             <a href="/aulas/editar/{{ $item->id }}" class="btn btn-outline-primary">Editar</a>
                             <a href="/aulas/apagar/{{ $item->id }}" class="btn btn-outline-danger"
                                onclick="return confirm('Tem certeza de que deseja remover?');">Deletar</a>
-                            <a href="/aulas{{ $item->id }}" class="btn btn-outline-primary">Ver Aula</a>
                         </div>
                     </div>
                 </div>

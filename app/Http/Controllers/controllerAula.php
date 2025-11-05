@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Aula;
-use App\Models\User;
+use App\Models\Curso;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
@@ -27,7 +27,9 @@ class controllerAula extends Controller
      */
     public function create()
     {
-        return view('novaAula');
+        $dados = Curso::all();
+        return view('novaAula', compact('dados'));
+       // dd($dados);
     }
 
     /**
@@ -40,7 +42,7 @@ class controllerAula extends Controller
         $dados->dataAula = $request->input('dataAula');
         $dados->descricaoAula = $request->input('descricaoAula');
         $dados->statusAula = $request->input('statusAula');
-        $dados->curso_id = $request->input('');
+        $dados->curso_id = $request->input('curso');
         $dados->save();
         return redirect('/aulas')->with('success', 'Nova aula cadastrada com sucesso.');
     }
@@ -103,6 +105,6 @@ class controllerAula extends Controller
         $nome = $request->input('nomeAula');
         $dados = DB::table('aulas')->select('id', 'nomeAula', 'dataAula', 'descricaoAula', 'statusAula')
                  ->where(DB::raw('lower(nomeAula)'), 'like', '%' . strtolower($nome) . '%')->get();
-        return view('exibirCursos', compact('dados'));
+        return view('exibirAulas', compact('dados'));
     }
 }

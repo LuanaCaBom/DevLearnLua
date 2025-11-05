@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nomeAula');
             $table->string('dataAula');
             $table->string('descricaoAula');
-            $table->boolean('statusAula');
+            $table->boolean('statusAula')->nullable();
             $table->unsignedBigInteger('curso_id');
             $table->foreign('curso_id')->references('id')->on('cursos');
             $table->timestamps();

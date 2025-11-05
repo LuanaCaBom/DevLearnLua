@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class CursoUser extends Model
 {
-    protected $fillbase = ['dtMatricula', 'progresso', 'certificados', 'statusPagamento'];
+    protected $fillbase = ['dtMatricula', 'progresso', 'certificados'];
 }

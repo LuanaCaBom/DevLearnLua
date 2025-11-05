@@ -29,7 +29,7 @@
                             <a href="/cursos/editar/{{ $item->id }}" class="btn btn-outline-primary">Editar</a>
                             <a href="/cursos/apagar/{{ $item->id }}" class="btn btn-outline-danger"
                                onclick="return confirm('Tem certeza de que deseja remover?');">Deletar</a>
-                            <a href="/aulas{{ $item->id }}" class="btn btn-outline-primary">Ver Curso</a>
+                            <a href="/aulas" class="btn btn-outline-primary">Ver Curso</a>
                         </div>
                     </div>
                 </div>
