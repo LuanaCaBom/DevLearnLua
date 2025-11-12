@@ -14,21 +14,17 @@
                 <input type="text" class="form-control" name="nomeAula"
                 placeholder="Informe o nome da aula">
             </div>
+
             <div class="form-group">
                 <label for="dataAula">Data:</label>
                 <input type="date" class="form-control" name="dataAula"
                 placeholder="Informe a data da aula">
             </div>
+
             <div class="form-group">
                 <label for="descricaoAula">Descrição:</label>
                 <input type="text" class="form-control" name="descricaoAula"
                 placeholder="Informe a desacrição da aula">
-            </div>
-            <div class="form-group">
-                <div>
-                    <input type="checkbox" id="assitida" name="statusAula">
-                    <label for="assistida">Concluída</label>
-                </div>
             </div>
 
             <div class="form-group">
@@ -38,6 +34,117 @@
                         <option value="{{ $item->id }}">{{ $item->nomeCurso }}</option>
                     @endforeach
                 </select>
+            </div>
+
+            <div class="form-group">
+                <div>
+                    <input type="checkbox" id="assitida" name="statusAula">
+                    <label for="assistida">Concluída</label>
+                </div>
+            </div>
+
+            <h3>Videoaula</h3>
+            <div>
+
+                <div class="form-group">
+                    <div>
+                        <input type="file" id="arquivo" name="arquivo">
+                        <label id="RotuloArquivo" for="arquivo">Escolha o arquivo da aula</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div>
+                        <label for="tituloArq">Título:</label>
+                    <input type="text" class="form-control" name="descricaoArq"
+                    placeholder="Informe o título do arquivo">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div>
+                        <input type="hidden" id="A" name="tipoArq">
+                    </div>
+                </div>
+
+            </div>
+            
+            <h3>Lista de Exercícios</h3>
+            <div>
+
+                <div class="form-group">
+                    <div>
+                        <input type="file" id="arquivo" name="arquivo">
+                        <label id="RotuloArquivo" for="arquivo">Escolha o arquivo do exercício</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div>
+                        <label for="tituloArq">Título:</label>
+                    <input type="text" class="form-control" name="descricaoArq"
+                    placeholder="Informe o título do arquivo">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div>
+                        <input type="hidden" id="E" name="tipoArq">
+                    </div>
+                </div>
+                
+            </div>
+
+            <h3>Resolução da Lista de Exercícios</h3>
+            <div>
+
+                <div class="form-group">
+                    <div>
+                        <input type="file" id="arquivo" name="arquivo">
+                        <label id="RotuloArquivo" for="arquivo">Escolha o arquivo de resolução</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div>
+                        <label for="tituloArq">Título:</label>
+                    <input type="text" class="form-control" name="descricaoArq"
+                    placeholder="Informe o título do arquivo">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div>
+                        <input type="hidden" id="R" name="tipoArq">
+                    </div>
+                </div>
+                
+            </div>
+
+            <h3>Arquivo Complementar (opcional)</h3>
+            <div>
+
+                <div class="form-group">
+                    <div>
+                        <input type="file" id="arquivo" name="arquivo">
+                        <label id="RotuloArquivo" for="arquivo">Escolha o arquivo</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div>
+                        <label for="tituloArq">Título:</label>
+                    <input type="text" class="form-control" name="descricaoArq"
+                    placeholder="Informe o título do arquivo">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div>
+                        <input type="hidden" id="C" name="tipoArq">
+                    </div>
+                </div>
+                
             </div>
   
             <button type="submit" class="btn btn-outline-primary btn-sm">Salvar</button>

@@ -19,17 +19,20 @@ class controllerArquivos extends Controller
         }
 
         elseif ($post->tipo == 'C'){
-            $path = $request->file('arquivo')->store('certificados', 'public');
+            $path = $request->file('arquivo')->store('complementar', 'public');
+            
+        }
+
+        elseif ($post->tipo == 'R'){
+            $path = $request->file('arquivo')->store('resolucoes', 'public');
         }
 
         else{
-            $path = $request->file('arquivo')->store('complementar', 'public');
+            $path = $request->file('arquivo')->store('certificados', 'public');
         }
         
         $post = new Arquivo();
         $post->titulo = $request->input('tituloArq');
-        $post->descricao = $request->input('descricaoArq');
-        $post->data = $request->input('dataArq');
         $post->arquivo = $path;
         $post->save();
         return redirect('/');

@@ -15,8 +15,6 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->string('arquivo');
             $table->string('tituloArq');
-            $table->string('descricaoArq');
-            $table->string('dataArq');
             $table->char('tipoArq', length: 1);
             $table->unsignedBigInteger('aula_id');
             $table->foreign('aula_id')->references('id')->on('aulas');

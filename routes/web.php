@@ -18,6 +18,7 @@ Route::get('/cursos/pesquisar', [controllerCurso::class, 'pesquisarCurso'])->nam
 Route::get('/cursos/procurar', [controllerCurso::class, 'procurarCurso'])->name('procurarCurso');
 
 Route::get('/aulas', [controllerAula::class, 'index'])->name('indexAulas');
+Route::get('/aulas2', [controllerAula::class, 'index2'])->name('indexAulas2');
 Route::get('/aulas/nova', [controllerAula::class, 'create'])->name('novaAula');
 Route::post('/aulas', [controllerAula::class, 'store'])->name('gravaNovaAula');
 Route::get('/aulas/apagar/{id}', [controllerAula::class, 'destroy'])->name('deletaAula');

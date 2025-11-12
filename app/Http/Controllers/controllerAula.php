@@ -22,6 +22,13 @@ class controllerAula extends Controller
        
     }
 
+    public function index2()
+    {
+        $dados = Aula::all();
+        return view('exibirAulas2', compact('dados'));
+       
+    }
+
     /**
      * Show the form for creating a new resource.
      */
