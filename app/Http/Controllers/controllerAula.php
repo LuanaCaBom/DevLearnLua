@@ -48,7 +48,6 @@ class controllerAula extends Controller
         $dados->nomeAula = $request->input('nomeAula');
         $dados->dataAula = $request->input('dataAula');
         $dados->descricaoAula = $request->input('descricaoAula');
-        $dados->statusAula = $request->input('statusAula');
         $dados->curso_id = $request->input('curso');
         $dados->save();
         return redirect('/aulas')->with('success', 'Nova aula cadastrada com sucesso.');
@@ -67,9 +66,10 @@ class controllerAula extends Controller
      */
     public function edit(string $id)
     {
+        $cursos = Curso::all();
         $dados = Aula::find($id);
         if(isset($dados)){
-            return view('editarAula', compact('dados'))->with('success', 'Aula editada com sucesso.');
+            return view('editarAula', compact('dados', 'cursos'))->with('success', 'Aula editada com sucesso.');
         }
         return redirect('/aulas')->with('danger', 'Erro ao tentar editar aula.');
     }

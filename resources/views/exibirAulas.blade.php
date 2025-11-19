@@ -20,7 +20,8 @@
                 <div class="h-100 p-5 bg-body-tertiary border rounded-3">
                     <h5 class="card-title"><b>{{ $item->nomeAula }}</b></h5>
                     <a href="/aulas2" class="btn btn-outline-success">Ver mais</a>
-                    <a href="/aulas/editar/{{ $item->id }}" class="btn btn-outline-primary">Editar</a>
+                    <a href="/aulas/editar/{{ $item->id }}" class="btn btn-outline-primary">Editar Dados</a>
+                    <a href="/aulas/editar/{{ $item->id }}" class="btn btn-outline-warning">Inserir Material</a>
                     <a href="/aulas/apagar/{{ $item->id }}" class="btn btn-outline-danger"
                         onclick="return confirm('Tem certeza de que deseja remover?');">Deletar</a>
                 </div>

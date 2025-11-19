@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Aula extends Model
 {
-    protected $fillbase = ['nomeAula', 'dataAula', 'descricaoAula', 'statusAula', 'curso_id'];
+    protected $fillbase = ['nomeAula', 'dataAula', 'descricaoAula', 'curso_id'];
 
     public function curso() {
         return $this->belongsTo('App\Models\Curso');
