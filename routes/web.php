@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\controllerCurso;
 use App\Http\Controllers\controllerAula;
+use App\Http\Controllers\controllerArquivos;
 
 Route::get('/', function () {
     return view('index');
@@ -27,6 +28,8 @@ Route::post('/aulas/{id}', [controllerAula::class, 'update'])->name('atualizaAul
 Route::get('/aulas/pesquisar', [controllerAula::class, 'pesquisarAula'])->name('pesquisarAula');
 Route::get('/aulas/procurar', [controllerAula::class, 'procurarAula'])->name('procurarAula');
 
+Route::get('/arquivos/inserir/{id}', [controllerArquivos::class, 'create'])->name('inserirArquivo');
+Route::post('/arquivos', [controllerArquivos::class, 'store'])->name('gravaNovoArquivo');
 
 
 Auth::routes();

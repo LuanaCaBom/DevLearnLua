@@ -3,39 +3,45 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Aula;
+use App\Models\Arquivos;
 
 class controllerArquivos extends Controller
 {
     public function store(Request $request)
     {   
-        $post->tipo = $request->input('tipoArq');
-
-        if ($post->tipo == 'A'){
+        $tipoArq = $request->input('tipoArq');
+        if ($tipoArq == 'A'){
             $path = $request->file('arquivo')->store('aulas', 'public');
         }
 
-        elseif ($post->tipo == 'E'){
+        elseif ($tipoArq == 'E'){
             $path = $request->file('arquivo')->store('exercicios', 'public');
         }
 
-        elseif ($post->tipo == 'C'){
+        elseif ($tipoArq == 'C'){
             $path = $request->file('arquivo')->store('complementar', 'public');
             
         }
 
-        elseif ($post->tipo == 'R'){
+        elseif ($tipoArq == 'R'){
             $path = $request->file('arquivo')->store('resolucoes', 'public');
         }
-
-        else{
-            $path = $request->file('arquivo')->store('certificados', 'public');
-        }
         
-        $post = new Arquivo();
-        $post->titulo = $request->input('tituloArq');
+        $post = new Arquivos();
+        $post->tituloArq = $request->input('tituloArq');
         $post->arquivo = $path;
+        $post->aula_id = $request->input('aula_id');
+        $post->tipoArq = $tipoArq;
         $post->save();
-        return redirect('/');
+        return redirect('/arquivos');
+    }
+
+    public function create(string $id)
+    {
+        $dados = Aula::find($id);
+        return view('inserirArquivo', compact('dados'));
+       //dd($dados);
     }
 
     public function destroy($id)
@@ -46,7 +52,7 @@ class controllerArquivos extends Controller
             Storage::disk('public')->delete($arquivo);
             $post->delete();
         }
-        return redirect('/');
+        return redirect('/arquivos');
     }
 
     public function download($id)
@@ -55,7 +61,7 @@ class controllerArquivos extends Controller
         if (isset($post)) {
             return Storage::disk('public')->download($post->arquivo);
         } else {
-            return redirect('/');
+            return redirect('/arquivos');
         }
     }
 }
